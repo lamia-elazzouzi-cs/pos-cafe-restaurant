@@ -17,7 +17,6 @@ public class Categorie {
 
     @Column
     private String nom;
-    private Long id_admin;
 
     @ManyToOne
     @JoinColumn(name="id_admin")
@@ -33,10 +32,9 @@ public class Categorie {
     public Categorie() {
     }
 
-    public Categorie(long id, String nom, Long id_admin, Admin admin) {
+    public Categorie(long id, String nom, Admin admin) {
         this.id = id;
         this.nom = nom;
-        this.id_admin = id_admin;
         this.admin = admin;
     }
 
@@ -60,13 +58,7 @@ public class Categorie {
         this.nom = nom;
     }
 
-    public Long getId_admin() {
-        return id_admin;
-    }
 
-    public void setId_admin(Long id_admin) {
-        this.id_admin = id_admin;
-    }
 
     public Admin getAdmin() {
         return admin;
