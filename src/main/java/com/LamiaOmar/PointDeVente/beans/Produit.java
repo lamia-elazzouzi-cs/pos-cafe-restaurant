@@ -5,10 +5,7 @@ import javax.persistence.*;
 @Entity
 public class Produit {
     /*
-    ** Attributs: id, nom, prix, icone, objetcategorie
-    ** Association:
-    ** manytoone with categorie
-    ** manytoone with commande
+    ** Attributs: id, nom, prix, icone, categorie
     */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,28 +16,25 @@ public class Produit {
     private double prix;
     private String icone;
 
-    @ManyToOne
-    @JoinColumn(name="id_categorie")
-    private Categorie categorie;
+    private Long categorieID;
 
-    @ManyToOne
-    @JoinColumn(name="id_commande")
-    private Commande commande;
 
     public Produit() {
+    }
+
+    public Produit(long id, String nom, double prix, String icone, Long categorieID) {
+        this.id = id;
+        this.nom = nom;
+        this.prix = prix;
+        this.icone = icone;
+        this.categorieID = categorieID;
     }
 
     public Produit(long id) {
         this.id = id;
     }
 
-    public Produit(long id, String nom, double prix, String icone, Categorie categorie) {
-        this.id = id;
-        this.nom = nom;
-        this.prix = prix;
-        this.icone = icone;
-        this.categorie = categorie;
-    }
+
 
     public long getId() {
         return id;
@@ -74,19 +68,11 @@ public class Produit {
         this.icone = icone;
     }
 
-    public Categorie getCategorie() {
-        return categorie;
+    public Long getCategorieID() {
+        return categorieID;
     }
 
-    public void setCategorie(Categorie categorie) {
-        this.categorie = categorie;
-    }
-
-    public Commande getCommande() {
-        return commande;
-    }
-
-    public void setCommande(Commande commande) {
-        this.commande = commande;
+    public void setCategorieID(Long categorieID) {
+        this.categorieID = categorieID;
     }
 }

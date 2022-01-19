@@ -7,9 +7,6 @@ import java.util.List;
 public class Categorie {
     /*
     ** Attributs: id, nom, idAdmin
-    ** Association:
-    ** manytoone with admin
-    ** onetomany with produits
     */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,25 +14,25 @@ public class Categorie {
 
     @Column
     private String nom;
-
-    @ManyToOne
-    @JoinColumn(name="id_admin")
-    private Admin admin;
-
-
-    @OneToMany
-    private List<Produit> produits;
-
+    private Long adminID;
 
     // standard constructor, getter, setter
 
     public Categorie() {
     }
 
-    public Categorie(long id, String nom, Admin admin) {
+    public Categorie(long id, String nom, Long adminID) {
         this.id = id;
         this.nom = nom;
-        this.admin = admin;
+        this.adminID = adminID;
+    }
+
+    public Long getAdminID() {
+        return adminID;
+    }
+
+    public void setAdminID(Long adminID) {
+        this.adminID = adminID;
     }
 
     public Categorie(long id) {
@@ -59,20 +56,4 @@ public class Categorie {
     }
 
 
-
-    public Admin getAdmin() {
-        return admin;
-    }
-
-    public void setAdmin(Admin admin) {
-        this.admin = admin;
-    }
-
-    public List<Produit> getProduits() {
-        return produits;
-    }
-
-    public void setProduits(List<Produit> produits) {
-        this.produits = produits;
-    }
 }

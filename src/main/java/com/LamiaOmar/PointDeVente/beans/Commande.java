@@ -6,10 +6,7 @@ import java.util.List;
 @Entity
 public class Commande {
     /*
-    ** Attributs: id, date, idemployee, liste produits
-    ** Association:
-    ** onetomany with produits
-    ** manytoone with employe
+    ** Attributs: id, date, idemployee
     */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,12 +14,7 @@ public class Commande {
 
     @Column
     private String date;
-
-    @ManyToOne
-    private Employe employe;
-
-    @OneToMany
-    private List<Produit> produits;
+    private Long employeID;
 
     public Commande() {
     }
@@ -31,11 +23,10 @@ public class Commande {
         this.id = id;
     }
 
-    public Commande(long id, String date, Employe employe, List<Produit> produits) {
+    public Commande(long id, String date, Long employeID) {
         this.id = id;
         this.date = date;
-        this.employe = employe;
-        this.produits = produits;
+        this.employeID = employeID;
     }
 
     public long getId() {
@@ -54,27 +45,11 @@ public class Commande {
         this.date = date;
     }
 
-    public Employe getEmploye() {
-        return employe;
+    public Long getEmployeID() {
+        return employeID;
     }
 
-    public void setEmploye(Employe employe) {
-        this.employe = employe;
-    }
-
-    public List<Produit> getProduits() {
-        return produits;
-    }
-
-    public void setProduits(List<Produit> produits) {
-        this.produits = produits;
-    }
-
-    public double calculTotal(){
-        double total =0.0;
-        for (Produit p : this.produits) {
-            total = total + p.getPrix();
-        }
-        return total;
+    public void setEmployeID(Long employeID) {
+        this.employeID = employeID;
     }
 }

@@ -7,8 +7,6 @@ import java.util.List;
 public class Employe {
     /*
     ** Attributs: id, nom, email, telephone, fonction
-    ** Association:
-    ** onetomany with commandes
     */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,8 +18,6 @@ public class Employe {
     private String telephone;
     private String fonction;
 
-    @OneToMany
-    private List<Commande> commandes;
 
     public Employe() {
     }
@@ -78,11 +74,4 @@ public class Employe {
         this.fonction = fonction;
     }
 
-    public List<Commande> getCommandes() {
-        return commandes;
-    }
-
-    public void setCommandes(List<Commande> commandes) {
-        this.commandes = commandes;
-    }
 }

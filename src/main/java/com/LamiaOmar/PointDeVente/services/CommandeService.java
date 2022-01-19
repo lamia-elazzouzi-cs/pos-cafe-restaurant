@@ -33,10 +33,12 @@ public class CommandeService {
         Commande c1 = new Commande();
         c1 = this.findById(id);
         c1.setDate(c.getDate());
-        c1.setEmploye(c.getEmploye());
+        c1.setEmployeID(c.getEmployeID());
 
         this.save(c1);
         return c1;
     }
+
+
 
 }

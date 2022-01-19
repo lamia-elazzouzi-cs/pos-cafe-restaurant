@@ -1,14 +1,11 @@
 package com.LamiaOmar.PointDeVente.beans;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 public class Admin {
     /*
     ** Attributs: id, nom, email, mdp
-    ** Association:
-    ** onetomany categorie
     */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,8 +16,6 @@ public class Admin {
     private String email;
     private String mdp;
 
-    @OneToMany
-    private List<Categorie> categories;
 
     public Admin() {
     }
@@ -68,12 +63,5 @@ public class Admin {
         this.mdp = mdp;
     }
 
-    public List<Categorie> getCategories() {
-        return categories;
-    }
-
-    public void setCategories(List<Categorie> categories) {
-        this.categories = categories;
-    }
 
 }

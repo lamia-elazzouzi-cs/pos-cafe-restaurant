@@ -32,10 +32,10 @@ public class ProduitService {
     public Produit update(long id, Produit p){
         Produit pp = new Produit();
         pp = this.findById(id);
-        pp.setCategorie(p.getCategorie());
         pp.setIcone(p.getIcone());
         pp.setNom(p.getNom());
         pp.setPrix(p.getPrix());
+        pp.setCategorieID(p.getCategorieID());
 
         this.save(pp);
         return pp;

@@ -34,8 +34,7 @@ public class CategorieService {
         c1 = this.findById(id);
 
         c1.setNom(c.getNom());
-        c1.setAdmin(c.getAdmin());
-
+        c1.setAdminID(c.getAdminID());
 
         this.save(c1);
         return c1;
