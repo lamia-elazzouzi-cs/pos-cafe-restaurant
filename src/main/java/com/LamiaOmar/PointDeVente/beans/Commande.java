@@ -69,4 +69,12 @@ public class Commande {
     public void setProduits(List<Produit> produits) {
         this.produits = produits;
     }
+
+    public double calculTotal(){
+        double total =0.0;
+        for (Produit p : this.produits) {
+            total = total + p.getPrix();
+        }
+        return total;
+    }
 }
