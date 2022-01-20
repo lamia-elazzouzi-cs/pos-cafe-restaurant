@@ -1,5 +1,6 @@
 package com.LamiaOmar.PointDeVente.webservices;
 
+import com.LamiaOmar.PointDeVente.beans.Categorie;
 import com.LamiaOmar.PointDeVente.beans.Produit;
 import com.LamiaOmar.PointDeVente.services.ProduitService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,10 @@ public class ProduitWS {
     private ProduitService produitService;
     @GetMapping("")
     public List<Produit> findAll(){ return produitService.findAll(); }
+
+    @GetMapping("admin/{adminID}")
+    public List<Produit> findByAdminID(@PathVariable Long adminID){ return produitService.findByAdminID(adminID); }
+
 
     @GetMapping("{id}")
     public Produit findById(@PathVariable long id){ return produitService.findById(id);}

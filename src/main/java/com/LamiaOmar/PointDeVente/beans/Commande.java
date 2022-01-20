@@ -14,7 +14,7 @@ public class Commande {
 
     @Column
     private String date;
-    private long employeID;
+    private Long employeID;
 
     public Commande() {
     }
@@ -23,7 +23,7 @@ public class Commande {
         this.id = id;
     }
 
-    public Commande(long id, String date, long employeID) {
+    public Commande(long id, String date, Long employeID) {
         this.id = id;
         this.date = date;
         this.employeID = employeID;
@@ -45,11 +45,11 @@ public class Commande {
         this.date = date;
     }
 
-    public long getEmployeID() {
+    public Long getEmployeID() {
         return employeID;
     }
 
-    public void setEmployeID(long employeID) {
+    public void setEmployeID(Long employeID) {
         this.employeID = employeID;
     }
 }

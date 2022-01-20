@@ -17,6 +17,9 @@ public class CategorieWS {
     @GetMapping("")
     public List<Categorie> findAll(){ return categorieService.findAll(); }
 
+    @GetMapping("admin/{adminID}")
+    public List<Categorie> findByAdminID(@PathVariable Long adminID){ return categorieService.findByAdminID(adminID); }
+
     @GetMapping("{id}")
     public Categorie findById(@PathVariable long id){ return categorieService.findById(id);}
 

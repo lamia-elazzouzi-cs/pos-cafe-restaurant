@@ -16,8 +16,8 @@ public class Produit {
     private double prix;
     private String icone;
 
-    private long categorieID;
-    private long adminID;
+    private Long categorieID;
+    private Long adminID;
 
 
     public Produit() {
@@ -27,7 +27,7 @@ public class Produit {
         this.id = id;
     }
 
-    public Produit(long id, String nom, double prix, String icone, long categorieID, long adminID) {
+    public Produit(long id, String nom, double prix, String icone, Long categorieID, Long adminID) {
         this.id = id;
         this.nom = nom;
         this.prix = prix;
@@ -68,19 +68,19 @@ public class Produit {
         this.icone = icone;
     }
 
-    public long getCategorieID() {
+    public Long getCategorieID() {
         return categorieID;
     }
 
-    public void setCategorieID(long categorieID) {
+    public void setCategorieID(Long categorieID) {
         this.categorieID = categorieID;
     }
 
-    public long getAdminID() {
+    public Long getAdminID() {
         return adminID;
     }
 
-    public void setAdminID(long adminID) {
+    public void setAdminID(Long adminID) {
         this.adminID = adminID;
     }
 }

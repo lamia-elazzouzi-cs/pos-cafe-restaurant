@@ -1,10 +1,12 @@
 package com.LamiaOmar.PointDeVente.services;
 
+import com.LamiaOmar.PointDeVente.beans.Categorie;
 import com.LamiaOmar.PointDeVente.beans.Commande;
 import com.LamiaOmar.PointDeVente.dao.CommandeDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -38,7 +40,15 @@ public class CommandeService {
         this.save(c1);
         return c1;
     }
-
+    public List<Commande> findByEmployeID(Long employeID){
+        List<Commande> cs = new ArrayList<>();
+        for(Commande c: findAll()){
+            if(c.getEmployeID() == employeID){
+                cs.add(c);
+            }
+        }
+        return cs;
+    }
 
 
 }

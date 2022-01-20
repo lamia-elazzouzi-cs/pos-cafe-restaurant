@@ -17,7 +17,7 @@ public class Employe {
     private String email;
     private String telephone;
     private String fonction;
-    private long adminID;
+    private Long adminID;
 
 
     public Employe() {
@@ -27,7 +27,7 @@ public class Employe {
         this.id = id;
     }
 
-    public Employe(long id, String nom, String email, String telephone, String fonction, long adminID) {
+    public Employe(long id, String nom, String email, String telephone, String fonction, Long adminID) {
         this.id = id;
         this.nom = nom;
         this.email = email;
@@ -76,11 +76,11 @@ public class Employe {
         this.fonction = fonction;
     }
 
-    public long getAdminID() {
+    public Long getAdminID() {
         return adminID;
     }
 
-    public void setAdminID(long adminID) {
+    public void setAdminID(Long adminID) {
         this.adminID = adminID;
     }
 }

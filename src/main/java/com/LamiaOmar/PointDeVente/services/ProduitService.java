@@ -1,10 +1,12 @@
 package com.LamiaOmar.PointDeVente.services;
 
+import com.LamiaOmar.PointDeVente.beans.Categorie;
 import com.LamiaOmar.PointDeVente.beans.Produit;
 import com.LamiaOmar.PointDeVente.dao.ProduitDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -40,5 +42,14 @@ public class ProduitService {
 
         this.save(pp);
         return pp;
+    }
+    public List<Produit> findByAdminID(Long adminID){
+        List<Produit> prods = new ArrayList<>();
+        for(Produit p: findAll()){
+            if(p.getAdminID() == adminID){
+                prods.add(p);
+            }
+        }
+        return prods;
     }
 }

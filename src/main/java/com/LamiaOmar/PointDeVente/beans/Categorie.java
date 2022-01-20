@@ -14,7 +14,7 @@ public class Categorie {
 
     @Column
     private String nom;
-    private long adminID;
+    private Long adminID;
 
     public Categorie() {
     }
@@ -23,7 +23,7 @@ public class Categorie {
         this.id = id;
     }
 
-    public Categorie(long id, String nom, long adminID) {
+    public Categorie(long id, String nom, Long adminID) {
         this.id = id;
         this.nom = nom;
         this.adminID = adminID;
@@ -45,11 +45,11 @@ public class Categorie {
         this.nom = nom;
     }
 
-    public long getAdminID() {
+    public Long getAdminID() {
         return adminID;
     }
 
-    public void setAdminID(long adminID) {
+    public void setAdminID(Long adminID) {
         this.adminID = adminID;
     }
 }

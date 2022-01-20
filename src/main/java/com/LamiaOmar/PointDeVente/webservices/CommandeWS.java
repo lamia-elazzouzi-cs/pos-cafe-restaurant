@@ -1,5 +1,6 @@
 package com.LamiaOmar.PointDeVente.webservices;
 
+import com.LamiaOmar.PointDeVente.beans.Categorie;
 import com.LamiaOmar.PointDeVente.beans.Commande;
 import com.LamiaOmar.PointDeVente.services.CommandeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,9 @@ public class CommandeWS {
     private CommandeService commandeService;
     @GetMapping("")
     public List<Commande> findAll(){ return commandeService.findAll(); }
+
+    @GetMapping("employee/{employeID}")
+    public List<Commande> findByEmployeID(@PathVariable Long employeID){ return commandeService.findByEmployeID(employeID); }
 
     @GetMapping("{id}")
     public Commande findById(@PathVariable long id){ return commandeService.findById(id);}

@@ -1,5 +1,6 @@
 package com.LamiaOmar.PointDeVente.webservices;
 
+import com.LamiaOmar.PointDeVente.beans.Categorie;
 import com.LamiaOmar.PointDeVente.beans.Employe;
 import com.LamiaOmar.PointDeVente.services.EmployeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,9 @@ public class EmployeWS {
     private EmployeService employeService;
     @GetMapping("")
     public List<Employe> findAll(){ return employeService.findAll(); }
+
+    @GetMapping("admin/{adminID}")
+    public List<Employe> findByAdminID(@PathVariable Long adminID){ return employeService.findByAdminID(adminID); }
 
     @GetMapping("{id}")
     public Employe findById(@PathVariable long id){ return employeService.findById(id);}
