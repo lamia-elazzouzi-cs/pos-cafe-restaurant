@@ -16,25 +16,25 @@ public class Produit {
     private double prix;
     private String icone;
 
-    private Long categorieID;
+    private long categorieID;
+    private long adminID;
 
 
     public Produit() {
-    }
-
-    public Produit(long id, String nom, double prix, String icone, Long categorieID) {
-        this.id = id;
-        this.nom = nom;
-        this.prix = prix;
-        this.icone = icone;
-        this.categorieID = categorieID;
     }
 
     public Produit(long id) {
         this.id = id;
     }
 
-
+    public Produit(long id, String nom, double prix, String icone, long categorieID, long adminID) {
+        this.id = id;
+        this.nom = nom;
+        this.prix = prix;
+        this.icone = icone;
+        this.categorieID = categorieID;
+        this.adminID = adminID;
+    }
 
     public long getId() {
         return id;
@@ -68,11 +68,19 @@ public class Produit {
         this.icone = icone;
     }
 
-    public Long getCategorieID() {
+    public long getCategorieID() {
         return categorieID;
     }
 
-    public void setCategorieID(Long categorieID) {
+    public void setCategorieID(long categorieID) {
         this.categorieID = categorieID;
+    }
+
+    public long getAdminID() {
+        return adminID;
+    }
+
+    public void setAdminID(long adminID) {
+        this.adminID = adminID;
     }
 }

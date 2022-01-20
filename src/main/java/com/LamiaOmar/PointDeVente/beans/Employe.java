@@ -6,7 +6,7 @@ import java.util.List;
 @Entity
 public class Employe {
     /*
-    ** Attributs: id, nom, email, telephone, fonction
+    ** Attributs: id, nom, email, telephone, fonction, adminid
     */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,6 +17,7 @@ public class Employe {
     private String email;
     private String telephone;
     private String fonction;
+    private long adminID;
 
 
     public Employe() {
@@ -26,12 +27,13 @@ public class Employe {
         this.id = id;
     }
 
-    public Employe(long id, String nom, String email, String telephone, String fonction) {
+    public Employe(long id, String nom, String email, String telephone, String fonction, long adminID) {
         this.id = id;
         this.nom = nom;
         this.email = email;
         this.telephone = telephone;
         this.fonction = fonction;
+        this.adminID = adminID;
     }
 
     public long getId() {
@@ -74,4 +76,11 @@ public class Employe {
         this.fonction = fonction;
     }
 
+    public long getAdminID() {
+        return adminID;
+    }
+
+    public void setAdminID(long adminID) {
+        this.adminID = adminID;
+    }
 }

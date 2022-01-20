@@ -31,3 +31,4 @@ public class CommandeWS {
         return commandeService.update(id, c);
     }
 }
+

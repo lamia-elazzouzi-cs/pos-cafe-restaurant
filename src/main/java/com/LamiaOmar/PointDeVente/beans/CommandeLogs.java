@@ -12,16 +12,22 @@ public class CommandeLogs {
     private long id;
 
     @Column
-    private Long commandeID;
-    private Long produitID;
+    private long commandeID;
+    private long produitID;
 
-    public CommandeLogs(long id, Long commandeID, Long produitID) {
+
+
+    public CommandeLogs() {
+    }
+
+    public CommandeLogs(long id) {
+        this.id = id;
+    }
+
+    public CommandeLogs(long id, long commandeID, long produitID) {
         this.id = id;
         this.commandeID = commandeID;
         this.produitID = produitID;
-    }
-
-    public CommandeLogs() {
     }
 
     public long getId() {
@@ -32,19 +38,19 @@ public class CommandeLogs {
         this.id = id;
     }
 
-    public Long getCommandeID() {
+    public long getCommandeID() {
         return commandeID;
     }
 
-    public void setCommandeID(Long commandeID) {
+    public void setCommandeID(long commandeID) {
         this.commandeID = commandeID;
     }
 
-    public Long getProduitID() {
+    public long getProduitID() {
         return produitID;
     }
 
-    public void setProduitID(Long produitID) {
+    public void setProduitID(long produitID) {
         this.produitID = produitID;
     }
 }

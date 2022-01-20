@@ -1,7 +1,7 @@
 package com.LamiaOmar.PointDeVente.beans;
 
 import javax.persistence.*;
-import java.util.List;
+
 
 @Entity
 public class Commande {
@@ -14,7 +14,7 @@ public class Commande {
 
     @Column
     private String date;
-    private Long employeID;
+    private long employeID;
 
     public Commande() {
     }
@@ -23,7 +23,7 @@ public class Commande {
         this.id = id;
     }
 
-    public Commande(long id, String date, Long employeID) {
+    public Commande(long id, String date, long employeID) {
         this.id = id;
         this.date = date;
         this.employeID = employeID;
@@ -45,11 +45,11 @@ public class Commande {
         this.date = date;
     }
 
-    public Long getEmployeID() {
+    public long getEmployeID() {
         return employeID;
     }
 
-    public void setEmployeID(Long employeID) {
+    public void setEmployeID(long employeID) {
         this.employeID = employeID;
     }
 }

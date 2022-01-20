@@ -36,6 +36,7 @@ public class EmployeService {
         a1.setTelephone(e.getTelephone());
         a1.setEmail(e.getEmail());
         a1.setNom(e.getNom());
+        a1.setAdminID(e.getAdminID());
 
         this.save(a1);
         return a1;

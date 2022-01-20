@@ -14,29 +14,19 @@ public class Categorie {
 
     @Column
     private String nom;
-    private Long adminID;
-
-    // standard constructor, getter, setter
+    private long adminID;
 
     public Categorie() {
     }
 
-    public Categorie(long id, String nom, Long adminID) {
+    public Categorie(long id) {
+        this.id = id;
+    }
+
+    public Categorie(long id, String nom, long adminID) {
         this.id = id;
         this.nom = nom;
         this.adminID = adminID;
-    }
-
-    public Long getAdminID() {
-        return adminID;
-    }
-
-    public void setAdminID(Long adminID) {
-        this.adminID = adminID;
-    }
-
-    public Categorie(long id) {
-        this.id = id;
     }
 
     public long getId() {
@@ -55,5 +45,11 @@ public class Categorie {
         this.nom = nom;
     }
 
+    public long getAdminID() {
+        return adminID;
+    }
 
+    public void setAdminID(long adminID) {
+        this.adminID = adminID;
+    }
 }

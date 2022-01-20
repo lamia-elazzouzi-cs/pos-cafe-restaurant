@@ -36,6 +36,7 @@ public class ProduitService {
         pp.setNom(p.getNom());
         pp.setPrix(p.getPrix());
         pp.setCategorieID(p.getCategorieID());
+        pp.setAdminID(p.getAdminID());
 
         this.save(pp);
         return pp;
