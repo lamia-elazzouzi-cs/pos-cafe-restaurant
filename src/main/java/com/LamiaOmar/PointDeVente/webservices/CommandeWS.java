@@ -18,7 +18,7 @@ public class CommandeWS {
     @GetMapping("")
     public List<Commande> findAll(){ return commandeService.findAll(); }
 
-    @GetMapping("employee/{employeID}")
+    @GetMapping("employe/{employeID}")
     public List<Commande> findByEmployeID(@PathVariable Long employeID){ return commandeService.findByEmployeID(employeID); }
 
     @GetMapping("{id}")
